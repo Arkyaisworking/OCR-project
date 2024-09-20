@@ -12,7 +12,7 @@ const Skeleton = () => (
 
 const FileUploadComponent = ({ handleFileUpload }) => (
   <div className="rounded-lg">
-    <FileUpload onChange={handleFileUpload} accept=".txt, .jpg, .jpeg, .png" /> {/* Adjusted to accept image files */}
+    <FileUpload onChange={handleFileUpload} accept=".txt" />
   </div>
 );
 
@@ -79,7 +79,7 @@ const InputPage = () => {
   const items = [
     {
       title: "Upload File",
-      description: "Upload an image file (.jpg, .jpeg, .png).",
+      description: "Upload a .txt file.",
       className: "md:col-span-3",
       component: <FileUploadComponent handleFileUpload={handleFileUpload} />,
       icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
@@ -103,7 +103,7 @@ const InputPage = () => {
 
   return (
     <div className="container mx-auto mt-10 p-4">
-      <h1 className="text-3xl font-bold mb-6">Image File Input</h1>
+      <h1 className="text-3xl font-bold mb-6">Text File Input</h1>
       <div className="md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] bg-conic-gradient">
         <div className="relative w-full p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
           <div className="absolute top-0 left-0 max-w-full">
