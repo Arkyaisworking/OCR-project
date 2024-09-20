@@ -71,8 +71,8 @@ Start the Flask API:
       pip install -r requirements.txt
    Train the model 
    ### **Usage**
-   - **Frontend:** Open [http://localhost:3000](http://localhost:3000) in your browser to access the React application.
-   - **Backend:** The Flask API runs on [http://localhost:5000](http://localhost:5000). You can test it using tools like Postman.
+   - **Frontend:** Open [http://localhost:5173](http://localhost:5173) in your browser to access the React application.
+   - **Backend:** The Flask API runs on [http://localhost:8080](http://localhost:8080). You can test it using tools like Postman.
    - **Machine Learning:** The pre-trained model is used to predict handwritten digits and convert notes.
 
 ## Team
