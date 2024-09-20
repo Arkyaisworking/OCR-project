@@ -11,13 +11,13 @@
 - [Contribution Guidelines](#contribution-guidelines)
 - [Team](#team)
 
-- ## Features
+## Features
 - Recognizes handwritten digits using a trained machine learning model.
 - Converts handwritten notes into digital text.
 - User-friendly web interface for uploading and viewing notes.
 - RESTful API for backend communication.
 - Cloud deployment using AWS.
-- 
+  
 ## Technologies Used
 - **Frontend:** React.js
 - **Backend:** Flask (Python)
@@ -49,8 +49,8 @@ project-repo/
 
 ### Frontend Setup
    Clone the repository:
-   git clone https://github.com/your-repo/OCR-project.git
-   cd OCR-project/frontend
+   git clone https://github.com/your-repo/OCR-project.git<br>
+   cd OCR-project/frontend<br>
    See Frontend Readme for more details
 
  ###  Backend Setup
@@ -75,7 +75,13 @@ Start the Flask API:
    - **Backend:** The Flask API runs on [http://localhost:5000](http://localhost:5000). You can test it using tools like Postman.
    - **Machine Learning:** The pre-trained model is used to predict handwritten digits and convert notes.
 
-   ## Acknowledgements
+## Team
+- **Frontend Developer:** Soumalya Mukhopadhyay
+- **Backend Developer:** Sabarni Gayen
+- **Data Scientist:** Arkyaprabha Sengupta
+- **Cloud/Git Developer:** Preety Datta
+  
+   ### Acknowledgements
 - [React](https://reactjs.org/) - Frontend framework
 - [Flask](https://flask.palletsprojects.com/) - Backend framework
 - [TensorFlow](https://www.tensorflow.org/) - Machine learning library
