@@ -31,7 +31,7 @@ const PricingList = () => {
             href={plan.price ? "#" : "mailto:info@example.com"}
             white={!plan.premium}
           >
-            {plan.price ? "Buy" : "Lessssgoooo"}
+            {plan.price ? "Buy" : "Unavailable"}
           </Button>
 
           <ul>

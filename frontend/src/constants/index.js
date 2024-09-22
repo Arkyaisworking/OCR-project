@@ -254,7 +254,7 @@ export const pricing = [
   {
     id: "2",
     title: "Enterprise",
-    description: "jhakanaka bpr spr",
+    description: "Upcoming",
     price: null,
     features: [
       "Ensure secure file uploads and downloads through encryption (SSL/HTTPS)",
