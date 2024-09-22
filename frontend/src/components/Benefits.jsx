@@ -5,6 +5,7 @@ import { GradientLight } from "./design/Benefits";
 import Heading from "./Heading";
 import Section from "./Section";
 import { curve } from "../assets";
+import { NeonGradientCard } from "./neon-gradient-card";
 
 const Benefits = () => {
   return (
@@ -38,24 +39,21 @@ const Benefits = () => {
               }}
               key={benefit.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
-                <h5 className="h5 mb-5">{benefit.title}</h5>
-                <p className="body-2 mb-6 text-n-3">{benefit.text}</p>
-                <div className="flex items-center mt-auto">
-                  <img
-                    src={benefit.iconUrl}
-                    width={48}
-                    height={48}
-                    alt={benefit.title}
-                  />
-
-                  <Arrow />
-                </div>
+              <div className="relative z-2 flex flex-col h-10 min-h-[22rem] p-[2.4rem] pointer-events-none">
+                <NeonGradientCard className="max-w-sm items-center justify-center text-center">
+                  <h5 className="h5 mb-5">{benefit.title}</h5>
+                  <p className="body-2 mb-6 text-n-3">{benefit.text}</p>
+                  <div className="flex items-center mt-auto"></div>
+                </NeonGradientCard>
               </div>
-
+              {/* <NeonGradientCard className="max-w-sm items-center justify-center text-center">
+                <span className="pointer-events-none z-10 h-full whitespace-pre-wrap bg-white bg-clip-text text-center text-6xl font-bold leading-none tracking-tighter text-transparent dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)]">
+                  Neon Gradient Card
+                </span>
+              </NeonGradientCard> */}
               {benefit.light && <GradientLight />}
 
-              <div
+              {/* <div
                 className="absolute inset-0.5 bg-n-8"
                 style={{ clipPath: "url(#benefits)" }}
               >
@@ -70,7 +68,7 @@ const Benefits = () => {
                     />
                   )}
                 </div>
-              </div>
+              </div> */}
 
               <ClipPath />
             </div>

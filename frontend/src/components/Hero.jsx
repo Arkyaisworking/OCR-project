@@ -11,6 +11,7 @@ import Generating from "./Generating";
 import Notification from "./Notification";
 import Section from "./Section";
 import { Link } from "react-router-dom";
+import Cobe from "./codeglobe";
 
 const Hero = () => {
   useEffect(() => {
@@ -38,7 +39,6 @@ const Hero = () => {
                 strings: [
                   "jpg",
                   "png",
-                  "pdf",
                   // "Image Generation",
                   // "Code Generation",
                 ],
@@ -77,18 +77,20 @@ const Hero = () => {
               <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
               <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
-                <img
+                {/* <img
                   src={abstract}
                   className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%] pointer-events-none select-none"
                   width={1024}
                   height={490}
                   alt="AI"
-                />
+                /> */}
 
-                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
+                <div className="items-center justify-center md:h-auto dark:bg-black bg-white relative w-full z-2">
+                  <Cobe />
+                </div>
 
                 <ScrollParallax isAbsolutelyPositioned>
-                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-indigo-500 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                  <ul className="hidden absolute -left-[19rem] bottom-[7.5rem] px-1 py-1 bg-indigo-500 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
                     {heroIcons.map((icon, index) => (
                       <li className="p-5" key={index}>
                         <img src={icon} width={30} height={30} alt={icon} />
@@ -99,7 +101,7 @@ const Hero = () => {
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <Notification
-                    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
+                    className="hidden absolute -right-[19rem] bottom-[11rem] w-[18rem] xl:flex"
                     title="Text Generation "
                   />
                 </ScrollParallax>

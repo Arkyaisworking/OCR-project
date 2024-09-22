@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Gradient } from "./design/Services";
+import HyperText from "./hyper-text";
 
 const OutputPage = () => {
   const [text, setText] = useState(null);
@@ -13,15 +14,17 @@ const OutputPage = () => {
     const fetchText = async () => {
       try {
         // const response = await fetch('/static/results/result.txt');
-        const response = await fetch('http://localhost:8080/results/result.txt');
+        const response = await fetch(
+          "http://localhost:8080/results/result.txt"
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const textContent = await response.text();
-        setText(textContent.split('\n')); // Assuming you want to split the text by lines
+        setText(textContent.split("\n")); // Assuming you want to split the text by lines
       } catch (error) {
-        console.error('Failed to fetch text file:', error);
+        console.error("Failed to fetch text file:", error);
       }
     };
 
@@ -47,11 +50,16 @@ const OutputPage = () => {
   };
   return (
     <div className="container mx-auto mt-10 p-4">
-      <h1 className="text-3xl font-bold mb-6">OCR Output</h1>
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      {/* <h1 className="text-3xl font-bold mb-6 text-center">OCR Output</h1> */}
+
+      <HyperText
+        className="text-4xl font-bold text-black  dark:text-white"
+        text="OCR Output"
+      />
+      <div className=" bg-black border-solid border-purple-700 border-4 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 ">
         <div className="mb-4">
-          <h2 className="text-xl font-semibold mb-2">Extracted Text:</h2>
-          <div className="bg-black p-4 rounded">
+          <h2 className="text-xl font-semibold mb-2 pb-5">Extracted Text:</h2>
+          <div className="bg-black border-solid border-purple-700 border-4 p-4 rounded">
             {text ? (
               <pre className="whitespace-pre-wrap">{text.join("\n")}</pre>
             ) : (
@@ -71,28 +79,47 @@ const OutputPage = () => {
               className="max-w-full h-auto"
             />
           </div>
-        )}        <div className="flex justify-end space-x-4">
-        <button
-          onClick={handleCopy}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          disabled={!text}
-        >
-          Copy Text
-        </button>
-        <button
-          onClick={handleDownload}
-          className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          disabled={!text}
-        >
-          Download Text
-        </button>
+        )}{" "}
+        <div className="flex justify-end space-x-4">
+          {/* <button
+            onClick={handleCopy}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            disabled={!text}
+          >
+            Copy Text
+          </button> */}
+          <button
+            onClick={handleCopy}
+            className="p-[3px] relative "
+            disabled={!text}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+              Copy Text
+            </div>
+          </button>
+          {/* <button
+            onClick={handleDownload}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            disabled={!text}
+          >
+            Download Text
+          </button> */}
+          <button
+            onClick={handleDownload}
+            className="p-[3px] relative"
+            disabled={!text}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+            <div className="px-8 py-2  bg-black rounded-[6px]  relative group transition duration-200 text-white hover:bg-transparent">
+              Downlaod Button
+            </div>
+          </button>
+        </div>
       </div>
+      <Gradient />
     </div>
-    <Gradient />
-  </div>
-);
+  );
 };
 
 export default OutputPage;
-
-

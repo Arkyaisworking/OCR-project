@@ -5,6 +5,7 @@ import { grid } from "../assets";
 import { BentoGrid, BentoGridItem } from "./bento-grid";
 import { IconClipboardCopy, IconFileBroken } from "@tabler/icons-react";
 import { FileUpload } from "./file-upload";
+import HyperText from "./hyper-text";
 
 const Skeleton = () => (
   <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl dark:bg-dot-white/[0.2] bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)] border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
@@ -12,7 +13,8 @@ const Skeleton = () => (
 
 const FileUploadComponent = ({ handleFileUpload }) => (
   <div className="rounded-lg">
-    <FileUpload onChange={handleFileUpload} accept=".txt, .jpg, .jpeg, .png" /> {/* Adjusted to accept image files */}
+    <FileUpload onChange={handleFileUpload} accept=".txt, .jpg, .jpeg, .png" />{" "}
+    {/* Adjusted to accept image files */}
   </div>
 );
 
@@ -103,7 +105,11 @@ const InputPage = () => {
 
   return (
     <div className="container mx-auto mt-10 p-4">
-      <h1 className="text-3xl font-bold mb-6">Image File Input</h1>
+      {/* <h1 className="text-3xl font-bold mb-6">Image File Input</h1> */}
+      <HyperText
+        className="text-4xl font-bold text-black  dark:text-white"
+        text="OCR Input"
+      />
       <div className="md:flex even:md:translate-y-[7rem] p-0.25 rounded-[2.5rem] bg-conic-gradient">
         <div className="relative w-full p-8 bg-n-8 rounded-[2.4375rem] overflow-hidden xl:p-15">
           <div className="absolute top-0 left-0 max-w-full">
